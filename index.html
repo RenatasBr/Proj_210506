@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // atvaizduoti masyvo duomenis
+      //jeigu kazkuriu parametru nera - atspausdinti, kad duomenys nepilni ir viskas
+      // bet jeigu tas domuo yra kaina, spausdinam visus fieldus, ir ties kaina - "sutartine";
+
+      let listOfCars = [
+        {
+          type: "Fiat",
+          model: "500",
+          color: "white",
+          price: 10000,
+        },
+        {
+          type: "Fiat",
+          model: "600",
+          color: "white",
+        },
+
+        {
+          type: "Peugeot",
+          model: "406",
+          color: "Grey",
+          price: 5000,
+        },
+
+        {
+          invalid: false,
+        },
+
+        {},
+      ];
+
+      for (let i = 0; i < listOfCars.length; i++) {
+        const car = listOfCars[i];
+        if ( ( car.type === undefined || car.type === null) 
+             || (car.model === undefined || car.model === null)
+             || (car.color === undefined || car.color === null) ){
+        console.log ("Nekorektiški automobilio duomenys");    
+        }
+        else if(car.price === undefined ||car.price === null || isNaN(car.price)){
+            console.log ("car type: " + car.type + "; car model: " + car.model +
+            "; car color: " + car.color + "; kaina sutartinė");
+        }
+        else{
+            console.log ("car type: " + car.type + "; car model: " + car.model +
+            "; car color: " + car.color + "; car price: " + car.price);
+        }
+    }
+
+      // + " " + car['model'] + " " + car.color + " "+ car.price );
+    </script>
+  </body>
+</html>
